@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/note_item_padding">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/new_note_tag_title"
+        style="@style/TextAppearance.Material3.BodySmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="#NewTag" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/new_note_tag"
+        android:padding="@dimen/new_tag_padding"
+        android:layout_width="@dimen/new_tag_input_field"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="@string/new_tag_hint"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

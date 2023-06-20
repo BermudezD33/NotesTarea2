@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="note_item_padding">16dp</dimen>
+    <dimen name="new_tag_padding">15dp</dimen>
+    <dimen name="new_tag_input_field">260dp</dimen>
+</resources>
