@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -14,6 +15,7 @@ import com.dbermudez.notes.R
 import com.dbermudez.notes.domain.models.NoteModel
 import com.dbermudez.notes.ui.notes.adapters.NoteListAdapter
 import com.dbermudez.notes.ui.notes.viewmodels.NoteListViewModel
+import com.google.android.material.button.MaterialButton
 import java.util.logging.LogRecord
 
 class NoteListFragment : Fragment() {
@@ -34,6 +36,7 @@ class NoteListFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_note_list, container, false)
         initViews(view)
+        onClickListener(view)
         viewModel = ViewModelProvider(this)[NoteListViewModel::class.java]
         observe()
         return view
@@ -70,8 +73,14 @@ class NoteListFragment : Fragment() {
 
 
     private fun onListItemClicked(noteModel: NoteModel) {
-        toAddNewNoteView()
         Toast.makeText(context, "${noteModel.title} was clicked", Toast.LENGTH_LONG).show()
+    }
+
+    private fun onClickListener(view: View) {
+        view.findViewById<MaterialButton>(R.id.add_note_button)
+            .setOnClickListener() {
+                toAddNewNoteView()
+            }
     }
 
 
