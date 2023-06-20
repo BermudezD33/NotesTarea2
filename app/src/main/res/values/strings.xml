@@ -2,5 +2,6 @@
     <string name="app_name">Notes</string>
     <string name="add_note_button_name">Add New Note</string>
     <string name="new_tag_hint">#NewTag</string>
+    <string name="view_notes_button_name">View Notes</string>
 
 </resources>

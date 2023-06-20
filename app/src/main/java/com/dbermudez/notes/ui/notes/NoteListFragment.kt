@@ -83,7 +83,6 @@ class NoteListFragment : Fragment() {
             }
     }
 
-
     private fun toAddNewNoteView() {
         val fragment: Fragment = AddNoteFragment()
         parentFragmentManager.beginTransaction()

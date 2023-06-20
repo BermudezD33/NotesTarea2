@@ -14,10 +14,11 @@ import com.dbermudez.notes.R
 import com.dbermudez.notes.domain.models.NoteModel
 import com.dbermudez.notes.ui.notes.adapters.NoteListAdapter
 import com.dbermudez.notes.ui.notes.viewmodels.NoteListViewModel
+import com.google.android.material.button.MaterialButton
 
 class AddNoteFragment : Fragment() {
 
-    private lateinit var  viewModel: NoteListViewModel
+    private lateinit var viewModel: NoteListViewModel
     private lateinit var notesRecyclerView: RecyclerView
 
     override fun onCreateView(
@@ -25,10 +26,26 @@ class AddNoteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_add_note, container, false)
-       // initViews(view)
+        onClickListener(view)
+        // initViews(view)
         viewModel = ViewModelProvider(this)[NoteListViewModel::class.java]
         //observe()
         return view
+    }
+
+    private fun onClickListener(view: View) {
+        view.findViewById<MaterialButton>(R.id.note_list_button)
+            .setOnClickListener() {
+                toListNotesView()
+            }
+    }
+
+    private fun toListNotesView() {
+        val fragment: Fragment = NoteListFragment()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+
     }
 
 //
