@@ -18,7 +18,7 @@ import com.dbermudez.notes.ui.notes.viewmodels.NoteListViewModel
 class AddNoteFragment : Fragment() {
 
     private lateinit var viewModel: NoteListViewModel
-    private lateinit var notesRecyclerView: RecyclerView
+    private lateinit  var notesRecyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
